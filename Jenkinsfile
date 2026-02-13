@@ -2,21 +2,19 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Dependencies') {
+        stage('Hello') {
             steps {
-                bat 'pip install -r requirements.txt'
+                echo 'Building the application'
             }
         }
-
-        stage('Run App') {
-            steps {
-                bat 'python app.py'
+        stage('Test'){
+            steps{
+                echo "Runnuing tests"
             }
         }
-
-        stage('Run Tests') {
-            steps {
-                bat 'pytest'
+        stage('Deploy'){
+            steps{
+                echo "Deploy"
             }
         }
     }
